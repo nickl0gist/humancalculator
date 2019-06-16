@@ -13,5 +13,6 @@ public class Main {
 
         System.out.println(bmi.calculate());
         System.out.println(bmi.interpret());
+        sc.close();
     }
 }
