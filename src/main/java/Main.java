@@ -4,7 +4,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-
         Scanner sc = new Scanner(System.in);
 
         double height = asker(sc, "What is your height in meters?");
@@ -21,7 +20,7 @@ public class Main {
         System.out.println(str);
         while(true){
            try {
-               double answer = Double.parseDouble(sc.next());
+               double answer = Double.parseDouble(sc.next().replace(",","."));
                if (answer > 0){
                    return answer;
                } else {

@@ -1,8 +1,19 @@
+import java.util.Arrays;
+
 public class BMICalculator implements HumanCalculator{
 
-    public static final double BOTTOM_BORDER = 18.5;
-    public static final double NORMAL_BORDER = 25.0;
-    public static final double UPPER_BORDER = 30.0;
+    double[] limitValues = {15.0,16.0,18.5,25,30,35,40,45,50,60,1000};
+    String[] labels = {"very severely underweight",
+            "severely underweight",
+            "underweight",
+            "normal",
+            "overweight",
+            "moderate obese",
+            "severely obese",
+            "very severely obese",
+            "morbidly obese",
+            "super obese",
+            "hyper obese"};
 
     private double height;
     private double weight;
@@ -31,14 +42,7 @@ public class BMICalculator implements HumanCalculator{
      */
     @Override
     public String interpret() {
-        if (index < BMICalculator.BOTTOM_BORDER)
-            return "You are underweight.";
-        if(index >= BMICalculator.BOTTOM_BORDER && index < BMICalculator.NORMAL_BORDER)
-            return "Your BMI is in normal condition.";
-        if(index >= BMICalculator.NORMAL_BORDER && index < BMICalculator.UPPER_BORDER)
-            return "You are overweight!";
-        if(index >= BMICalculator.UPPER_BORDER)
-            return "You are obese!";
-        return null;
+        int search = -Arrays.binarySearch(limitValues, index)-1;
+        return "You are " + labels[search] + ".";
     }
 }
