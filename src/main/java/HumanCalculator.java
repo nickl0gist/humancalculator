@@ -1,8 +1,8 @@
 public interface HumanCalculator {
 
     /**
-     * Calculates requested parameters. Arguments will be taken from user
-     * @return String with calculated results divided by sign DIVIDER from class Constants
+     * Calculates requested parameters.
+     * @return String with calculated results
      */
     String calculate();
 
